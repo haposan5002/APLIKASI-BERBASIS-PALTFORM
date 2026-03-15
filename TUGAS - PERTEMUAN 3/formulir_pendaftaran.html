@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran Praktikan</title>
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1557683311-eac922347aa1?w=1600&h=900&fit=crop');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 50px 0;
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            width: 500px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+        }
+        td {
+            padding: 8px 0;
+            vertical-align: top;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 90%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="button"],
+        input[type="submit"] {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn-cancel {
+            background-color: #e74c3c;
+            color: white;
+            margin-right: 10px;
+        }
+        .btn-submit {
+            background-color: #2ecc71;
+            color: white;
+        }
+        .btn-cancel:hover { background-color: #c0392b; }
+        .btn-submit:hover { background-color: #27ae60; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Formulir Pendaftaran Praktikan</h2>
+        <form action="#" method="POST">
+            <table>
+                <tr>
+                    <td><label for="nama_id"><b>Nama:</b></label></td>
+                    <td>:</td>
+                    <td><input type="text" name="nama_input" id="nama_id" placeholder="Input Nama" value="Haposan Siregar" readonly></td>
+                </tr>
+                <tr>
+                    <td><label for="nim_id"><b>NIM:</b></label></td>
+                    <td>:</td>
+                    <td><input type="text" name="nim_input" id="nim_id" placeholder="Input NIM" value="2311102210" readonly></td>
+                </tr>
+                <tr>
+                    <td><label for="uname_id"><b>Username:</b></label></td>
+                    <td>:</td>
+                    <td><input type="text" name="uname_input" id="uname_id" placeholder="Input Username" value="haposansiregar" disabled></td>
+                </tr>
+                <tr>
+                    <td><label for="password_id"><b>Password:</b></label></td>
+                    <td>:</td>
+                    <td><input type="password" name="password_input" id="password_id" placeholder="Input Password"></td>
+                </tr>
+                <tr>
+                    <td><label for="email_id"><b>Email:</b></label></td>
+                    <td>:</td>
+                    <td><input type="email" name="email_input" id="email_id" placeholder="Input Email" value="2311102210@ittelkom-pwt.ac.id"></td>
+                </tr>
+                <tr>
+                    <td><b>Jenis Kelamin:</b></td>
+                    <td>:</td>
+                    <td>
+                        <input type="radio" name="jk_input" id="pria" value="Pria" checked>
+                        <label for="pria">Pria</label>
+                        <input type="radio" name="jk_input" id="wanita" value="Wanita">
+                        <label for="wanita">Wanita</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Hobi:</b></td>
+                    <td>:</td>
+                    <td>
+                        <input type="checkbox" name="hobi_input" id="coding" value="Coding" checked>
+                        <label for="coding">Coding</label><br>
+                        <input type="checkbox" name="hobi_input" id="bersepeda" value="Bersepeda">
+                        <label for="bersepeda">Bersepeda</label><br>
+                        <input type="checkbox" name="hobi_input" id="gaming" value="Gaming">
+                        <label for="gaming">Gaming</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="jp_id"><b>Jenjang Pendidikan:</b></label></td>
+                    <td>:</td>
+                    <td>
+                        <select name="jp_input" id="jp_id">
+                            <option value=""> ------Pilih------</option>
+                            <option value="D3">Tamat D3</option>
+                            <option value="S1" selected>Tamat S1</option>
+                            <option value="S2">Tamat S2</option>
+                            <option value="S3">Tamat S3</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="kritik_saran"><b>Kritik &amp; Saran:</b></label></td>
+                    <td>:</td>
+                    <td><textarea id="kritik_saran" name="kritik_saran" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="right" style="padding-top: 20px;">
+                        <input type="button" value="Cancel" class="btn-cancel">
+                        <input type="submit" value="Submit" class="btn-submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
