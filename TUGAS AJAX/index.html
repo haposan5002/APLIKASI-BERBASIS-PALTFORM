@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh AJAX dengan jQuery</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            width: 500px;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h2 {
+            text-align: center;
+            color: #4a4a8a;
+            margin-bottom: 25px;
+        }
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+        #msg {
+            width: 100%;
+            padding: 10px 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            margin: 8px 0 15px 0;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        #msg:focus {
+            border-color: #667eea;
+            outline: none;
+        }
+        #shoutbutton {
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        #shoutbutton:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.5);
+        }
+        #data {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            min-height: 50px;
+            border: 1px dashed #ccc;
+        }
+        #data div {
+            padding: 8px 12px;
+            margin: 5px 0;
+            background: white;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+            animation: fadeIn 0.3s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .info {
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>📡 AJAX Shout Demo</h2>
+        <form id="form1">
+            <label for="msg">Ketik Pesan:</label>
+            <input type="text" name="msg" id="msg" placeholder="Tulis sesuatu di sini..." />
+            <input type="button" value="Shout!" id="shoutbutton" />
+        </form>
+        <div id="data"></div>
+        <p class="info">Haposan Felix Marcel Siregar — 2311102210 — S1 IF-04</p>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="ajax.js"></script>
+</body>
+</html>
