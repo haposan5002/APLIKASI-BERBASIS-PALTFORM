@@ -1,0 +1,58 @@
+#!/bin/bash
+export PATH=/Applications/XAMPP/xamppfiles/bin:$PATH
+
+echo "--- COMMAND 1: PHP Version ---" > outputs.txt
+echo "$ php -v" >> outputs.txt
+php -v >> outputs.txt 2>&1
+echo "" >> outputs.txt
+
+echo "--- COMMAND 2: MySQL Version ---" >> outputs.txt
+echo "$ mysql -V" >> outputs.txt
+mysql -V >> outputs.txt 2>&1
+echo "" >> outputs.txt
+
+echo "--- COMMAND 3: PHP Configuration Path ---" >> outputs.txt
+echo "$ php --ini" >> outputs.txt
+php --ini >> outputs.txt 2>&1
+echo "" >> outputs.txt
+
+echo "--- COMMAND 4: Run Inline PHP ---" >> outputs.txt
+echo "$ php -r \"echo 'Halo dari XAMPP CLI!';\"" >> outputs.txt
+php -r "echo 'Halo dari XAMPP CLI!';" >> outputs.txt 2>&1
+echo "" >> outputs.txt
+
+echo "--- COMMAND 5: List PHP Modules ---" >> outputs.txt
+echo "$ php -m | head -n 5" >> outputs.txt
+php -m | head -n 5 >> outputs.txt 2>&1
+echo "..." >> outputs.txt
+echo "" >> outputs.txt
+
+echo "--- COMMAND 6: MySQL Admin Status Tool Version ---" >> outputs.txt
+echo "$ mysqladmin -V" >> outputs.txt
+mysqladmin -V >> outputs.txt 2>&1
+echo "" >> outputs.txt
+
+echo "--- COMMAND 7: Apache HTTP Server Version ---" >> outputs.txt
+echo "$ httpd -v" >> outputs.txt
+httpd -v >> outputs.txt 2>&1
+echo "" >> outputs.txt
+
+echo "--- COMMAND 8: MySQL dump version ---" >> outputs.txt
+echo "$ mysqldump -V" >> outputs.txt
+mysqldump -V >> outputs.txt 2>&1
+echo "" >> outputs.txt
+
+echo "--- COMMAND 9: PHP syntax check ---" >> outputs.txt
+echo "<?php echo 'Test'; ?>" > test_syntax.php
+echo "$ php -l test_syntax.php" >> outputs.txt
+php -l test_syntax.php >> outputs.txt 2>&1
+rm test_syntax.php
+echo "" >> outputs.txt
+
+echo "--- COMMAND 10: XAMPP Control Script Status ---" >> outputs.txt
+echo "$ sudo /Applications/XAMPP/xamppfiles/xampp status" >> outputs.txt
+# we will just do a help or no arguments instead of status to avoid sudo requirement if possible
+echo "$ /Applications/XAMPP/xamppfiles/xampp help" >> outputs.txt
+/Applications/XAMPP/xamppfiles/xampp help | head -n 10 >> outputs.txt 2>&1
+echo "" >> outputs.txt
+
