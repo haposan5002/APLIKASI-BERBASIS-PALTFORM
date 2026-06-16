@@ -363,8 +363,8 @@ _(Tangkapan layar (screenshot) hasil pengujian diletakkan pada folder `SS`)_
 
 | No  | Deskripsi Tampilan                                  | File Gambar                                       |
 | :-: | :-------------------------------------------------- | :------------------------------------------------ |
-|  1  | Halaman aplikasi menampilkan nilai counter          | <img src="SS/counter_page.png" width="360" />     |
-|  2  | Notifikasi "Counter Update" setelah tombol ditekan  | <img src="SS/notifikasi.png" width="360" />       |
+|  1  | Halaman aplikasi menampilkan nilai counter          | <img width="428" height="857" alt="Screenshot 2026-06-16 at 14 38 15" src="https://github.com/user-attachments/assets/cbc2e64d-4baf-4d16-8c5a-a56ae9a66a9f" />    |
+|  2  | Notifikasi "Counter Update" setelah tombol ditekan  | <img width="433" height="765" alt="Screenshot 2026-06-16 at 14 39 01" src="https://github.com/user-attachments/assets/d7c63fbe-3434-4059-8031-57b64ce99470" />     |
 
 </div>
 
