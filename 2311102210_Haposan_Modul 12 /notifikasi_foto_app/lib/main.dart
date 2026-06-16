@@ -23,26 +23,38 @@ void main() async {
   const InitializationSettings initSettings = InitializationSettings(
     android: androidSettings,
     iOS: iosSettings,
+    macOS: iosSettings,
     linux: linuxSettings,
   );
 
   await flutterLocalNotificationsPlugin.initialize(settings: initSettings);
 
-  // Request notification permissions (required for Android 13+ and iOS)
-  if (!kIsWeb && Platform.isAndroid) {
-    final androidPlugin = flutterLocalNotificationsPlugin
-        .resolvePlatformSpecificImplementation<
-            AndroidFlutterLocalNotificationsPlugin>();
-    await androidPlugin?.requestNotificationsPermission();
-  } else if (!kIsWeb && Platform.isIOS) {
-    final iosPlugin = flutterLocalNotificationsPlugin
-        .resolvePlatformSpecificImplementation<
-            IOSFlutterLocalNotificationsPlugin>();
-    await iosPlugin?.requestPermissions(
-      alert: true,
-      badge: true,
-      sound: true,
-    );
+  // Request notification permissions (required for Android 13+, iOS, and macOS)
+  if (!kIsWeb) {
+    if (Platform.isAndroid) {
+      final androidPlugin = flutterLocalNotificationsPlugin
+          .resolvePlatformSpecificImplementation<
+              AndroidFlutterLocalNotificationsPlugin>();
+      await androidPlugin?.requestNotificationsPermission();
+    } else if (Platform.isIOS) {
+      final iosPlugin = flutterLocalNotificationsPlugin
+          .resolvePlatformSpecificImplementation<
+              IOSFlutterLocalNotificationsPlugin>();
+      await iosPlugin?.requestPermissions(
+        alert: true,
+        badge: true,
+        sound: true,
+      );
+    } else if (Platform.isMacOS) {
+      final macOSPlugin = flutterLocalNotificationsPlugin
+          .resolvePlatformSpecificImplementation<
+              MacOSFlutterLocalNotificationsPlugin>();
+      await macOSPlugin?.requestPermissions(
+        alert: true,
+        badge: true,
+        sound: true,
+      );
+    }
   }
 
   runApp(const MyApp());
@@ -231,22 +243,41 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     // Pastikan izin notifikasi sudah diberikan sebelum menampilkan
     bool permissionGranted = true;
 
-    if (!kIsWeb && Platform.isAndroid) {
-      final androidPlugin = flutterLocalNotificationsPlugin
+    if (kIsWeb) {
+      final webPlugin = flutterLocalNotificationsPlugin
           .resolvePlatformSpecificImplementation<
-              AndroidFlutterLocalNotificationsPlugin>();
+              WebFlutterLocalNotificationsPlugin>();
+      await webPlugin?.requestNotificationsPermission();
       permissionGranted =
-          await androidPlugin?.requestNotificationsPermission() ?? false;
-    } else if (!kIsWeb && Platform.isIOS) {
-      final iosPlugin = flutterLocalNotificationsPlugin
-          .resolvePlatformSpecificImplementation<
-              IOSFlutterLocalNotificationsPlugin>();
-      permissionGranted = await iosPlugin?.requestPermissions(
-            alert: true,
-            badge: true,
-            sound: true,
-          ) ??
-          false;
+          webPlugin?.permissionStatus == WebNotificationPermission.granted;
+    } else {
+      if (Platform.isAndroid) {
+        final androidPlugin = flutterLocalNotificationsPlugin
+            .resolvePlatformSpecificImplementation<
+                AndroidFlutterLocalNotificationsPlugin>();
+        permissionGranted =
+            await androidPlugin?.requestNotificationsPermission() ?? false;
+      } else if (Platform.isIOS) {
+        final iosPlugin = flutterLocalNotificationsPlugin
+            .resolvePlatformSpecificImplementation<
+                IOSFlutterLocalNotificationsPlugin>();
+        permissionGranted = await iosPlugin?.requestPermissions(
+              alert: true,
+              badge: true,
+              sound: true,
+            ) ??
+            false;
+      } else if (Platform.isMacOS) {
+        final macOSPlugin = flutterLocalNotificationsPlugin
+            .resolvePlatformSpecificImplementation<
+                MacOSFlutterLocalNotificationsPlugin>();
+        permissionGranted = await macOSPlugin?.requestPermissions(
+              alert: true,
+              badge: true,
+              sound: true,
+            ) ??
+            false;
+      }
     }
 
     if (!permissionGranted) {
@@ -269,6 +300,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     const NotificationDetails notificationDetails = NotificationDetails(
       android: androidDetails,
       iOS: iosDetails,
+      macOS: iosDetails,
     );
 
     await flutterLocalNotificationsPlugin.show(

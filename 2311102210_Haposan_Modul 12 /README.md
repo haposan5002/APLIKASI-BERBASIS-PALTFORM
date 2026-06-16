@@ -659,18 +659,18 @@ dependencies:
 
 | No | Deskripsi | Screenshot |
 |:---:|:---|:---:|
-| 1 | Tampilan awal aplikasi (placeholder) | <img width="519" height="787" alt="image" src="https://github.com/user-attachments/assets/b5d94937-9096-45f4-8b0e-e9162c91f020" alt="Tampilan Awal" width="250" /> |
-| 2 | Membuka kamera perangkat | <img width="514" height="873" alt="image" src="https://github.com/user-attachments/assets/ad21b84a-01c4-4da5-95c5-8bfb6e1d67ba" alt="Kamera" width="250" /> |
-| 3 | Foto berhasil diambil dari kamera | <img width="512" height="825" alt="image" src="https://github.com/user-attachments/assets/eecfae1c-87f6-4f5f-bdf1-66748aee082a" />|
-| 4 | Notifikasi setelah ambil foto kamera | <img width="540" height="796" alt="image" src="https://github.com/user-attachments/assets/129f768f-abc9-4094-9d9a-acd389c1515a" />|
-| 5 | Foto berhasil dipilih dari galeri | <img width="520" height="830" alt="image" src="https://github.com/user-attachments/assets/225f6ac1-9513-4c64-9d63-e3d89894d5ad" />|
-| 6 | Notifikasi setelah pilih foto galeri | <img width="564" height="836" alt="image" src="https://github.com/user-attachments/assets/2d641577-c287-4cb8-be2f-6c21ec9365ec" />|
+| 1 | Tampilan awal aplikasi (placeholder) | <img src="SS/screenshot_modul89_awal.png" alt="Tampilan Awal" width="250" /> |
+| 2 | Membuka kamera perangkat | <img src="SS/screenshot_modul89_kamera.png" alt="Kamera" width="250" /> |
+| 3 | Foto berhasil diambil dari kamera | <img src="SS/screenshot_modul89_hasil_kamera.png" alt="Hasil Kamera" width="250" /> |
+| 4 | Notifikasi setelah ambil foto kamera | <img src="SS/screenshot_modul89_notif_kamera.png" alt="Notifikasi Kamera" width="250" /> |
+| 5 | Foto berhasil dipilih dari galeri | <img src="SS/screenshot_modul89_hasil_galeri.png" alt="Hasil Galeri" width="250" /> |
+| 6 | Notifikasi setelah pilih foto galeri | <img src="SS/screenshot_modul89_notif_galeri.png" alt="Notifikasi Galeri" width="250" /> |
 
 </div>
 
 <br>
 
-
+> **Catatan:** Screenshot di atas perlu diambil secara manual oleh praktikan setelah menjalankan aplikasi di device/emulator, lalu disimpan ke folder `SS/` dengan nama file sesuai tabel.
 
 ---
 
