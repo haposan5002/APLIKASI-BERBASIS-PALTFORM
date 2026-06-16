@@ -361,12 +361,10 @@ _(Tangkapan layar (screenshot) hasil pengujian diletakkan pada folder `SS`)_
 
 <div align="center">
 
-| No  | Deskripsi Tampilan                       | File Gambar                                              |
-| :-: | :--------------------------------------- | :------------------------------------------------------ |
-|  1  | Izin Aktifkan Notifikasi (Awal Dibuka)   | <img src="SS/izin notifikasi.png" width="320" />        |
-|  2  | Tampilan Awal Aplikasi                   | <img src="SS/tampilan awal.png" width="320" />          |
-|  3  | Klik Counter Pertama (Notifikasi Muncul) | <img src="SS/klik counter pertama.png" width="320" />   |
-|  4  | Klik Counter Kedua (Notifikasi Update)   | <img src="SS/klik counter kedua.png" width="320" />     |
+| No  | Deskripsi Tampilan                                  | File Gambar                                       |
+| :-: | :-------------------------------------------------- | :------------------------------------------------ |
+|  1  | Halaman aplikasi menampilkan nilai counter          | <img src="SS/counter_page.png" width="360" />     |
+|  2  | Notifikasi "Counter Update" setelah tombol ditekan  | <img src="SS/notifikasi.png" width="360" />       |
 
 </div>
 
